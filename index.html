@@ -24,3 +24,25 @@
 
 <button type="submit">Register</button>
 </form>
+<script>
+const nameInput = document.querySelector("#fullname");
+nameInput.addEventListener("blur", () => {
+    const errorSpan = document.querySelector("#fullname-error");
+    errorSpan.textContent = nameInput.value.trim() === "" ? "Full Name is required." : "";
+});
+const idInput = document.querySelector("#studentID");
+idInput.addEventListener("blur", () => {
+    const errorSpan = document.querySelector("#studentID-error");
+    errorSpan.textContent = idInput.value.trim() === "" ? "Student ID is required." : "";
+});
+const programmeSelect = document.querySelector("#programme");
+programmeSelect.addEventListener("change", () => {
+    const errorSpan = document.querySelector("#programme-error");
+    errorSpan.textContent = programmeSelect.value === "" ? "Select a programme." :"";
+});
+const courseSelect = document.querySelector("#courseId");
+courseSelect.addEventListener("change", () => {
+    const errorSpan = document.querySelector("#courseId-error");
+    errorSpan.textContent = courseSelect.value === "" ? "Select a course." :"";
+});
+</script>
